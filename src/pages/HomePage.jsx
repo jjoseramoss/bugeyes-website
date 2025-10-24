@@ -1,7 +1,9 @@
 
 const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <div className="bg-[url('../images/car-bugeyes-squish.jpg')] w-full bg-cover bg-center h-screen">
+        <h1>Home Page blahh</h1>
+    </div>
   )
 }
 

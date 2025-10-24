@@ -2,7 +2,9 @@ import React from 'react'
 
 const ShowPage = () => {
   return (
-    <div>ShowPage</div>
+    <div className="bg-[url('../images/boys-halloween.jpg')] w-full bg-cover bg-center h-screen">
+        <h1>SHOWS</h1>
+    </div>
   )
 }
 
