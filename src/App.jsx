@@ -1,33 +1,29 @@
-import React from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import HomePage from "./pages/HomePage";
 import "./App.css";
+import Sidebar from "./components/Sidebar";
+import BandPage from "./pages/BandPage";
+import ShowPage from "./pages/ShowPage";
+import GalleryPage from "./pages/GalleryPage";
+import ContactPage from "./pages/ContactPage";
 
 const App = () => {
   return (
-    <div className="flex h-screen bg-[url('../public/background.jpeg')] bg-cover bg-center">
-      {/* Sidebar */}
-      <aside className='bg-black/75 m-4 md:m-10  text-white p-6 rounded-2xl min-w-[250px] flex flex-col items-center md:items-start'>
-        {/* Logo Container */}
-        <div>
-          <img 
-          src="../public/bugeyes_logo.jpg" 
-          alt="bugeyes logo" 
-          className='w-24 h-24 md:w-32 md:h-32 rounded-full object-cover'
-          />
+    <BrowserRouter>
+      <Layout>
 
-        </div>
+        {/* Main Stuff */}
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/band" element={<BandPage />} />
+          <Route path="/shows" element={<ShowPage />} />
+          <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
+  );
+};
 
-        <nav className='w-full'>
-          <ul className='space-y-6 text-center md:text-left'>
-            <li className='hover:text-gray-300 transition-colors cursor-pointer text-lg font-medium px-4 py-2 rounded-lg hover:bg-white/10'>Home</li>
-            <li className='hover:text-gray-300 transition-colors cursor-pointer text-lg font-medium px-4 py-2 rounded-lg hover:bg-white/10'>The Band</li>
-            <li className='hover:text-gray-300 transition-colors cursor-pointer text-lg font-medium px-4 py-2 rounded-lg hover:bg-white/10'>Shows</li>
-            <li className='hover:text-gray-300 transition-colors cursor-pointer text-lg font-medium px-4 py-2 rounded-lg hover:bg-white/10'>Gallery</li>
-            <li className='hover:text-gray-300 transition-colors cursor-pointer text-lg font-medium px-4 py-2 rounded-lg hover:bg-white/10'>Contact</li>
-          </ul>
-        </nav>
-      </aside>
-    </div>
-  )
-}
-
-export default App
+export default App;
